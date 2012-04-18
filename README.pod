@@ -1,0 +1,27 @@
+=head1 NAME
+
+Kalas - Multi-Thread URL Fetcher
+
+=head1 SYNOPSIS
+
+  use Kalas;
+  my $k = Kalas->new();
+  $k->crawl( @url_list );
+  my @res_list = map{ $_->join } $k->coros;
+
+=head1 DESCRIPTION
+
+Kalas is a Multi-Thread URL Fetcher.
+
+=head1 AUTHOR
+
+satoshi azuma E<lt>ytnobody at gmail dot comE<gt>
+
+=head1 SEE ALSO
+
+=head1 LICENSE
+
+This library is free software; you can redistribute it and/or modify
+it under the same terms as Perl itself.
+
+=cut
