@@ -39,6 +39,11 @@ sub coros {
     return @{$self->{coros}};
 }
 
+sub responses {
+    my $self = shift;
+    return map { $_->join } $self->coros;
+}
+
 1;
 __END__
 
@@ -51,7 +56,7 @@ Kalas - Multi-Thread URL Fetcher
   use Kalas;
   my $k = Kalas->new();
   $k->crawl( @url_list );
-  my @res_list = map{ $_->join } $k->coros;
+  my @res_list = $k->responses;
 
 =head1 DESCRIPTION
 

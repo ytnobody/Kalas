@@ -7,7 +7,7 @@ Kalas - Multi-Thread URL Fetcher
   use Kalas;
   my $k = Kalas->new();
   $k->crawl( @url_list );
-  my @res_list = map{ $_->join } $k->coros;
+  my @res_list = $k->responses;
 
 =head1 DESCRIPTION
 

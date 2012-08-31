@@ -20,7 +20,10 @@ my $k = Kalas->new(
 
 $k->crawl( @urls );
 
-my @res_list = map { $_->join } $k->coros;
+my @res_list = $k->responses;
+
+is scalar @res_list, 5;
+
 my $title_fetcher = qr/<title>(.+)<\/title>/sim;
 
 for my $res ( @res_list ) {
